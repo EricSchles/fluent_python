@@ -43,7 +43,7 @@ class CodeClimate:
             doc_percent_per_file/float(code_files_counted),
             comment_percent_per_file/float(code_files_counted)
         )
-        
+
     def _read_file(self, filename):
         with open(os.path.abspath(filename), "r") as f:
             return f.read().split("\n")
@@ -61,12 +61,12 @@ class CodeClimate:
             "docs_percent": docs_percent,
             "comment_percent": comment_percent
         }
-        
+
     def _look_for_docs(self, code):
         for index, line in enumerate(code):
             if "class" in line or "def" in line:
                 next_line = code[index+1].strip()
-                if next_line.startswith('"""')  or next_line.startswith('"'):
+                if next_line.startswith('"""') or next_line.startswith('"'):
                     return True
                 if next_line.startswith("'''") or next_line.startswith("'"):
                     return True
@@ -79,7 +79,7 @@ class CodeClimate:
             if "class" in line or "def" in line:
                 count_of_total_objs += 1
                 next_line = code[index+1].strip()
-                if next_line.startswith('"""')  or next_line.startswith('"'):
+                if next_line.startswith('"""') or next_line.startswith('"'):
                     count_objs_with_docs += 1
                 if next_line.startswith("'''") or next_line.startswith("'"):
                     count_objs_with_docs += 1
