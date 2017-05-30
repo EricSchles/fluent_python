@@ -1,0 +1,3 @@
+import collections
+
+Docs = collections.namedtuple('Doc', ['docstring'])
