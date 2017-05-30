@@ -2,6 +2,7 @@ import collections
 
 Dice = collections.namedtuple('Dice', ['side'])
 
+
 class PairOfDice:
     dice_sides = [n for n in range(1, 7)]
 
